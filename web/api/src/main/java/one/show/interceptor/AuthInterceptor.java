@@ -9,6 +9,7 @@ import one.show.common.cache.RemoteCache;
 import one.show.common.local.XThreadLocal;
 import one.show.service.DeviceService;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class AuthInterceptor implements HandlerInterceptor {
 
     	Boolean forbidden = false;
     	
-    	if (deviceId == null || deviceId.equals("")){
+    	if (StringUtils.isBlank(deviceId)){
     		log.warn("deviceId is null["+request.getRequestURI()+"], return true");
 //    		throw new SecurityException("5002");
     		return true;
