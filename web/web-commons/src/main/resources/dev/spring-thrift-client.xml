@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+	
+	<bean id="activityServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.manage.thrift.iface.ActivityServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8419"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	<bean id="userServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.user.thrift.iface.UserServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="7911"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	<bean id="deviceServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.user.thrift.iface.DeviceServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="7912"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	<bean id="gpsServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.user.thrift.iface.GpsServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="7913"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	<bean id="faimilyServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.user.thrift.iface.FamilyServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="7914"></property>
+			    </bean>
+		  </property>
+	</bean>
+
+	<bean id="relationServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.relation.thrift.iface.RelationServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8119"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	
+	<bean id="statServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.stat.thrift.iface.StatServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8911"></property>
+			    </bean>
+		  </property>
+	</bean>
+
+
+	<bean id="videoServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.video.thrift.iface.VideoServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8012"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	<bean id="streamServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.stream.thrift.iface.StreamServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="stream"></property>
+			      	<property name="port" value="7811"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	
+	<bean id="sensitiveServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.manage.thrift.iface.SensitiveServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8418"></property>
+			    </bean>
+		  </property>
+	</bean>
+	<bean id="manageServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.manage.thrift.iface.ManageServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8416"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	<bean id="adminSystemServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.manage.thrift.iface.AdminSystemServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8417"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+
+	<bean id="searchServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.search.thrift.iface.SearchServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="timeout" value="5000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8338"></property>
+			    </bean>
+		  </property>
+	</bean>
+
+	
+	<bean id="payServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.pay.thrift.iface.PayServiceProxy"></property>
+		  <property name="maxActive" value="5"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="8612"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	<bean id="idServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+		  <property name="service" value="one.show.id.thrift.iface.IDServiceProxy"></property>
+		  <property name="maxActive" value="10"></property>
+		  <property name="idleTime" value="1800000"></property>
+		  <property name="addressProvider">
+			    <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+			      	<property name="configPath" value="biz"></property>
+			      	<property name="port" value="6912"></property>
+			    </bean>
+		  </property>
+	</bean>
+	
+	  <bean id="commentServiceClientProxy" class="one.show.common.client.thrift.ThriftServiceClientProxyFactory" destroy-method="close">
+                  <property name="service" value="one.show.comment.thrift.iface.CommentServiceProxy"></property>
+                  <property name="maxActive" value="10"></property>
+                  <property name="idleTime" value="1800000"></property>
+                  <property name="addressProvider">
+                            <bean class="one.show.common.client.thrift.DynamicAddressProvider">
+                                <property name="configPath" value="comment"></property>
+                                <property name="port" value="8214"></property>
+                            </bean>
+                  </property>
+        </bean>
+	
+</beans>

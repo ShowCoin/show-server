@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd 
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/util 
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!-- 声明多个server，并将其关联到该list中，以便监听器自动启动 -->  
+    <util:list id="thriftServerList">  
+        <ref bean="idServiceProxy" />  
+   		<ref bean="manageServiceProxy" />
+   		<ref bean="adminSystemServiceProxy" />
+   		<ref bean="sensitiveServiceProxy" />
+   		<ref bean="activityServiceProxy" />
+   		<ref bean="payServiceProxy" />
+    	<ref bean="searchServiceProxy" />
+    	<ref bean="statServiceProxy" />
+   		<ref bean="userServiceProxy" />
+        <ref bean="deviceServiceProxy" />  
+        <ref bean="familyServiceProxy" /> 
+        <ref bean="gpsServiceProxy" /> 
+    	<ref bean="videoServiceProxy" />
+    	<ref bean="relationServiceProxy" />
+    	<ref bean="commentServiceProxy" />
+    	
+    </util:list> 
+    
+     <bean id="relationServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8119"/>  
+       <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/> 
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.relation.thrift.iface.RelationServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="relationServiceProxyImpl"/>      
+    </bean>  
+    
+    <bean id="videoServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8012"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.video.thrift.iface.VideoServiceProxy"/>
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="videoServiceProxyImpl"/>      
+    </bean> 
+    
+    <bean id="userServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="7911"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.user.thrift.iface.UserServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="userServiceProxyImpl"/>      
+    </bean>  
+    
+    <bean id="deviceServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="7912"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.user.thrift.iface.DeviceServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="deviceServiceProxyImpl"/>      
+    </bean>
+    
+    <bean id="gpsServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="7913"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.user.thrift.iface.GpsServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="gpsServiceProxyImpl"/>      
+    </bean>
+    
+     <bean id="familyServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="7914"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.user.thrift.iface.FamilyServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="familyServiceProxyImpl"/>      
+    </bean>
+    
+    <bean id="statServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8911"/>  
+        <property name="selectorThreads" value="10"/>  
+        <property name="workerThreads" value="20"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.stat.thrift.iface.StatServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="statServiceProxyImpl"/>      
+    </bean>  
+    
+    <bean id="searchServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8338"/>  
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.search.thrift.iface.SearchServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="searchServiceProxyImpl"/>      
+    </bean>  
+    
+    <bean id="payServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8612"/>
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/> 
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.pay.thrift.iface.PayServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="payServiceProxyImpl"/>      
+    </bean> 
+    
+    <bean id="idServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="6912"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.id.thrift.iface.IDServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="idServiceProxyImpl"/>      
+    </bean>  
+    
+    
+    <bean id="manageServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8416"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.manage.thrift.iface.ManageServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="manageServiceProxyImpl"/>      
+    </bean> 
+    
+    <bean id="adminSystemServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8417"/>  
+        <property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.manage.thrift.iface.AdminSystemServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="adminSystemServiceProxyImpl"/>      
+    </bean>  
+    
+     <bean id="sensitiveServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8418"/>  
+       	<property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.manage.thrift.iface.SensitiveServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="sensitiveServiceProxyImpl"/>      
+    </bean>  
+    
+     <bean id="activityServiceProxy" class="one.show.common.server.ThriftServerProxy">  
+        <property name="port" value="8419"/>  
+       	<property name="selectorThreads" value="5"/>  
+        <property name="workerThreads" value="10"/>  
+        
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.manage.thrift.iface.ActivityServiceProxy"/>  
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="activityServiceProxyImpl"/>      
+    </bean>  
+    
+    <bean id="commentServiceProxy" class="one.show.common.server.ThriftServerProxy">
+        <property name="port" value="8214"/>
+        <property name="selectorThreads" value="5"/>
+        <property name="workerThreads" value="10"/>
+
+        <!-- thrift生成代理 -->
+        <property name="serviceProxy" value="one.show.comment.thrift.iface.CommentServiceProxy"/>
+        <!-- 实现类 -->
+        <property name="serviceProxyImpl" ref="CommentServiceProxyImpl"/>
+    </bean>
+    
+</beans>

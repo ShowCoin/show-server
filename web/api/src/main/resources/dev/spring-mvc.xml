@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.3.xsd 
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+      
+    <!-- 拦截器配置 -->
+    <mvc:interceptors>
+        <!-- 多个拦截器,顺序执行 -->
+        <mvc:interceptor>
+            <!-- 需要拦截的url -->
+            <mvc:mapping path="/*" />
+            <!-- 拦截器实现类 -->
+            <bean id="agentInterceptor" class="one.show.interceptor.AgentInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+        	<mvc:mapping path="/*" />
+			<bean id="securityInterceptor" class="one.show.interceptor.SecurityInterceptor"/>
+		</mvc:interceptor>
+		  <mvc:interceptor>
+		  <mvc:mapping path="/*" />  
+		 	<bean id="apiMonitorInterceptor" class="one.show.interceptor.ApiMonitorInterceptor"/>
+		 </mvc:interceptor>
+		   <mvc:interceptor>   
+		   <mvc:mapping path="/*" />     
+		    <bean id="userInterceptor" class="one.show.interceptor.UserInterceptor"/>
+		 </mvc:interceptor>
+		 <mvc:interceptor>
+		 <mvc:mapping path="/*" />
+			<bean id="authInterceptor" class="one.show.interceptor.AuthInterceptor"/>
+		</mvc:interceptor>
+		 <mvc:interceptor>
+		 <mvc:mapping path="/*" />
+			<bean id="logInterceptor" class="one.show.interceptor.LogInterceptor"/>
+		</mvc:interceptor>
+    </mvc:interceptors>
+        
+    <bean id="contentNegotiationManager"  class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <!-- 设置为true以忽略对Accept Header的支持-->
+        <property name="ignoreAcceptHeader" value="true"/>
+        <!-- true，开启扩展名支持，false关闭支持 -->
+        <property name="favorPathExtension" value="true"/>
+        <!-- 用于开启 /userinfo/123?format=json的支持 -->
+        <property name="favorParameter" value="false"/>
+        <!-- 在没有扩展名和参数时即: "/user/1" 时的默认展现形式  -->
+        <property name="defaultContentType" value="application/json"/>
+        <!-- 参数值至mimeType的映射,即 /rest?format=json json是key，application/json就是value 暂时只支持json和xml -->
+
+        <property name="mediaTypes">
+        	<value>
+                json=application/json
+                xml=application/xml
+                html=text/html
+            </value>
+        </property>
+        <!-- <property name="viewResolvers">
+            关闭所有的解析器，防止它在查找候选视图时多个解析器都运行
+            <list></list>
+        </property> -->
+    </bean>
+
+	<mvc:annotation-driven>  
+	    <mvc:message-converters>  
+	        <bean  
+	            class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">  
+	            <property name="supportedMediaTypes">  
+	                <list>  
+	                    <value>application/json;charset=UTF-8</value>  
+	                </list>  
+	            </property>  
+	        </bean>  
+	        <bean class="org.springframework.http.converter.StringHttpMessageConverter">  
+	            <!--避免出现乱码 -->  
+	            <constructor-arg value="UTF-8" index="0"></constructor-arg>  
+	            <property name="supportedMediaTypes">  
+	                <list>  
+	                    <value>text/plain;charset=UTF-8</value>
+	                    <value>application/json;charset=UTF-8</value>
+						<value>text/html;charset=UTF-8</value>
+		                <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+	                </list>  
+	            </property>  
+	        </bean>  
+	    </mvc:message-converters>  
+	</mvc:annotation-driven>  
+    
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--unit byte, 8M-->
+        <property name="maxUploadSize" value="8388608"/>
+    </bean>
+
+</beans>
+
+
+
+
+

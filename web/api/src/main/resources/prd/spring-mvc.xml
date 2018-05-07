@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+ <bean id="contentNegotiationManager"  class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <!-- 设置为true以忽略对Accept Header的支持-->
+        <property name="ignoreAcceptHeader" value="true"/>
+        <!-- true，开启扩展名支持，false关闭支持 -->
+        <property name="favorPathExtension" value="true"/>
+        <!-- 用于开启 /userinfo/123?format=json的支持 -->
+        <property name="favorParameter" value="false"/>
+        <!-- 在没有扩展名和参数时即: "/user/1" 时的默认展现形式  -->
+        <property name="defaultContentType" value="application/json"/>
+        <!-- 参数值至mimeType的映射,即 /rest?format=json json是key，application/json就是value 暂时只支持json和xml -->
+
+        <property name="mediaTypes">
+        	<value>
+                json=application/json
+                xml=application/xml
+                html=text/html
+            </value>
+        </property>
+        <!-- <property name="viewResolvers">
+            关闭所有的解析器，防止它在查找候选视图时多个解析器都运行
+            <list></list>
+        </property> -->
+        <property name="messageConverters">
+            <list>
+                <bean
+                    class="one.show.mapper.MappingJackson2JsonViewEx">
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="stringConverter"/>
+                <ref bean="jsonConverter"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="stringConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+        <property name="supportedMediaTypes">
+        <list>
+            <value>text/plain;charset=UTF-8</value>
+        </list>
+    </property>
+        <property name="writeAcceptCharset" value="false"/>
+    </bean>
+
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+       	<property name="objectMapper">
+                    <bean class="one.show.mapper.JsonMapper"/>
+        </property>
+        <property name="supportedMediaTypes">
+            <list>
+           	 	<value>application/json;charset=UTF-8</value>
+				<value>text/html;charset=UTF-8</value>
+                <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--unit byte, 8M-->
+        <property name="maxUploadSize" value="8388608"/>
+    </bean>
+
+</beans>
+
+
+
+
+

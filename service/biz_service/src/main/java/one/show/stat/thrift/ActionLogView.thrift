@@ -1,0 +1,39 @@
+namespace java one.show.stat.thrift.view
+
+struct ActionLogView{
+	1:i64 id
+	2:string ma
+	3:string im
+	4:string idfa
+	5:string idfy
+	6:string chl
+	7:double lo
+	8:double lt
+	9:string mo
+	10:i32 op
+	11:string co
+	12:string os
+	13:string sc
+	14:string ov
+	15:string vc
+	16:string vn
+	17:i32 ne
+	18:string uuid
+	19:i64 uid
+	20:i32 tn
+	21:string pname
+	22:string content
+	23:i32 aid
+	24:i64 vid
+	25:string city
+	26:i32 platform
+	27:string event
+	28:i32 giftId
+	29:i32 sendGift
+	30:double amount
+	31:i32 payType
+	32:i32 duration
+	33:string channel
+	34:i32 time
+	35:string ip
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy/>
+    
+    <bean id="manageWrite" class="one.show.common.datasource.BKDataSource">
+ 		<property name="dbName" value="showdb"/>
+ 		<property name="rw" value="w"/>
+ 	</bean>
+ 	
+ 	<bean id="manageRead" class="one.show.common.datasource.BKDataSource">
+ 		<property name="dbName" value="showdb"/>
+ 		<property name="rw" value="r"/>
+ 	</bean>
+ 	
+
+    <!-- 动态数据源，继承于AbstractRoutingDataSource -->
+    <bean id="multipleDataSource" class="com.souyu.shard.datasource.MultipleDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.String"> <!-- 数据源配置 -->
+                <entry key="manageWrite" value-ref="manageWrite"/>
+                <entry key="manageRead" value-ref="manageRead"/>
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="manageWrite"/>
+        <!-- 默认数据源 -->
+        <property name="packageDataSource"><!-- 包级别数据源配置 -->
+            <map>
+                <entry key="one.show.shard.dao" value="manageWrite"/>
+            </map>
+        </property>
+    </bean>
+    <!--  sqlSessionFactory for mybatis -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="multipleDataSource"/>
+        <!-- 配置mybatis配置文件的位置 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        
+    </bean>
+
+
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+  		<constructor-arg index="1" value="BATCH" />
+        
+    </bean>
+
+    <!-- 配置扫描Mapper接口的包路径 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 如果是多个包名可用",; \t\n"中任意符号分隔开，详见：MapperScannerConfigurer[269行] -->
+        <property name="basePackage" value="one.show.manage.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+    
+    
+    <bean id="mybatisTransactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          p:dataSource-ref="multipleDataSource"/>
+
+	
+	<tx:annotation-driven transaction-manager="mybatisTransactionManager" />
+	
+ 
+    <bean id="multiDataSourceAspect"
+          class="com.souyu.shard.datasource.aspect.MultipleDataSourceAspect"/>
+
+    <bean id="metaData" class="com.souyu.shard.aspect.ShardDbAspect"/>
+
+    <aop:config>
+        <aop:aspect ref="metaData">
+            <aop:around method="doAround"
+                        pointcut="execution(public * one.show..dao.*.*(..))"/>
+        </aop:aspect>
+    </aop:config>
+
+    <aop:config>
+        <aop:aspect ref="multiDataSourceAspect">
+            <aop:around method="doAround"
+                        pointcut="execution(public * one.show..dao.*.*(..))"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

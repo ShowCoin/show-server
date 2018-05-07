@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="classpath:spring-mvc.xml"/>
+    <import resource="classpath:spring-thrift-client.xml"/>
+
+    <context:component-scan base-package="one.show"/>
+
+    <!-- <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/> -->
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+	<bean class="one.show.init.BKInit" />
+    
+    <bean id="agentInterceptor" class="one.show.interceptor.AgentInterceptor"/>
+    
+	<bean id="securityInterceptor" class="one.show.interceptor.SecurityInterceptor"/>
+          
+ 	<bean id="apiMonitorInterceptor" class="one.show.interceptor.ApiMonitorInterceptor"/>
+          
+    <bean id="userInterceptor" class="one.show.interceptor.UserInterceptor"/>
+
+	<bean id="authInterceptor" class="one.show.interceptor.AuthInterceptor"/>
+
+	<bean id="logInterceptor" class="one.show.interceptor.LogInterceptor"/>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="interceptors">
+            <list>
+            	<ref bean="logInterceptor"/>
+				<ref bean="apiMonitorInterceptor"/>
+            	<ref bean="agentInterceptor"/>
+            	<ref bean="securityInterceptor"/>
+            	<ref bean="authInterceptor"/>
+                <ref bean="userInterceptor"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
+
+
+
+
+

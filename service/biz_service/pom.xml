@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>one.show</groupId>
+    <artifactId>service</artifactId>
+    <version>1.0</version>
+  </parent>
+  <groupId>one.show</groupId>
+  <artifactId>biz_service</artifactId>
+  <version>1.0</version>
+  <name>biz_service</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <build>
+        <plugins>
+            
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <descriptor>package.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+        
+        <resources>
+			<resource>
+				<directory>src/main/resources/${package.environment}</directory>
+			</resource>
+			
+			<resource>
+				<directory>../../commons/src/main/resources/${package.environment}</directory>
+			</resource>
+
+		</resources>
+    </build>
+    
+    <dependencies>
+    	<dependency>
+            <groupId>one.show</groupId>
+            <artifactId>proxy</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+    		<groupId>org.apache.lucene</groupId>
+    		<artifactId>lucene-core</artifactId>
+    		<version>5.3.1</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.apache.lucene</groupId>
+    		<artifactId>lucene-analyzers-common</artifactId>
+    		<version>5.3.1</version>
+    	</dependency>
+    	
+    	<dependency>
+    		<groupId>org.apache.lucene</groupId>
+    		<artifactId>lucene-queryparser</artifactId>
+    		<version>5.3.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.chenlb.mmseg4j</groupId>
+			<artifactId>mmseg4j-solr</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+	    </dependency>
+  </dependencies>
+</project>
