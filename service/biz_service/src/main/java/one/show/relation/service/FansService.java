@@ -31,6 +31,7 @@ public interface FansService {
 	 */
 	public void delete(Long uid, Long fid) throws ServiceException;
 
+	
 	/**
 	 * 获取粉丝数
 	 */
