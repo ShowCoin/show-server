@@ -7,15 +7,11 @@ import one.show.common.exception.ReturnException;
 import one.show.common.exception.ServiceException;
 import one.show.user.thrift.view.BlackListView;
 import one.show.user.thrift.view.ContactView;
-import one.show.user.thrift.view.NickNameUserView;
-import one.show.user.thrift.view.RoomAdminView;
 import one.show.user.thrift.view.SettingView;
-import one.show.user.thrift.view.ThirdBindView;
 import one.show.user.thrift.view.ThirdDataView;
 import one.show.user.thrift.view.UserForbiddenView;
 import one.show.user.thrift.view.UserPopularNoView;
 import one.show.user.thrift.view.UserView;
-import one.show.video.thrift.view.LiveView;
 
 public interface UserService{
 	
@@ -28,6 +24,11 @@ public interface UserService{
 	 */
 	public UserView  registerUser(UserView userView, ThirdDataView thirdDataView) throws ReturnException, ServiceException; 
 	
+	/**
+	 * 更新用户设备信息
+	 * @param userView
+	 * @throws ServiceException
+	 */
 	public void  updateUserDevice(UserView userView) throws ServiceException; 
 	
 
@@ -46,10 +47,27 @@ public interface UserService{
 	 */
 	public void setSwitch(String uid,Map<String, String> paramMap) throws ServiceException;
 	
+	/**
+	 * 根据id查询用户
+	 * @param id
+	 * @return
+	 * @throws ServiceException
+	 */
 	public UserView findUserById(long id) throws ServiceException;
 	
+	/**
+	 * 根据靓号popularNo查询用户
+	 * @param pid
+	 * @return
+	 * @throws ServiceException
+	 */
 	public UserView findUserByPid(long pid) throws ServiceException;
 	
+	/**
+	 * 根据id删除用户
+	 * @param uid
+	 * @throws ServiceException
+	 */
 	public void deletetUserById(Long uid) throws ServiceException;
 	
 	/**
@@ -60,6 +78,11 @@ public interface UserService{
 	 */
 	public ThirdDataView findThirdDataByTidAndType(String tid, String type) throws ServiceException;
 	
+	/**
+	 * 插入用户
+	 * @param userview
+	 * @throws ServiceException
+	 */
 	public void  insertUser(UserView userview) throws ServiceException;
 	
 
@@ -76,10 +99,29 @@ public interface UserService{
 	 */
 	void updateUserById(long uid, Map<String,String> updateContent) throws ServiceException;
 
+	/**
+	 * 更新账户信息
+	 * @param tid
+	 * @param type
+	 * @param map
+	 * @throws ServiceException
+	 */
 	public void updateThirdData(String tid,String type, Map<String,String> map) throws ServiceException;
 	
+	/**
+	 * 保存账户信息
+	 * @param thirdDataView
+	 * @return
+	 * @throws ServiceException
+	 */
 	public int saveThirdData(ThirdDataView thirdDataView) throws ServiceException;
 	
+	/**
+	 * 查询所有账户信息
+	 * @param uid
+	 * @return
+	 * @throws ServiceException
+	 */
 	public List<ThirdDataView> findThirdDataListByUid(long uid) throws ServiceException;
 	
 	/**
@@ -98,10 +140,29 @@ public interface UserService{
 	 */
 	public void insertContactListByUid(List<ContactView> contactViewList) throws ServiceException;
 	
+	/**
+	 * 删除账户
+	 * @param tid
+	 * @param type
+	 * @throws ServiceException
+	 */
 	public void deleteThirdData(String tid,String type) throws ServiceException;
 	
+	/**
+	 * 根据uid和账户类型查询账户细腻洗
+	 * @param uid
+	 * @param type
+	 * @return
+	 * @throws ServiceException
+	 */
 	public ThirdDataView findThirdDataViewByUidAndType(long uid,String type) throws ServiceException;
 
+	/**
+	 * 根据ids多线程查询用户列表
+	 * @param ids
+	 * @return
+	 * @throws ServiceException
+	 */
 	List<UserView> findUserListByIds(List<Long> ids) throws ServiceException;
 	
 	/**
