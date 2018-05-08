@@ -11,6 +11,7 @@ import one.show.common.TimeUtil;
 import one.show.common.local.XThreadLocal;
 import one.show.service.UserService;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class UserInterceptor implements HandlerInterceptor {
 
         XThreadLocal.getInstance().setCurrentUser(null);
         
-        if (uid_str != null && token != null){
+        if (StringUtils.isNotBlank(uid_str) && StringUtils.isNotBlank(token)){
         	String[] arr = null;
         	try{
         		DESUtil du = new DESUtil();
