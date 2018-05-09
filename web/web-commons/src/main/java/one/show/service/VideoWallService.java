@@ -9,7 +9,7 @@ import one.show.common.Constant.LIVE_STATUS;
 import one.show.video.thrift.view.LiveView;
 
 /**
- * @author Haliaeetus leucocephalus  2016年6月7日 下午9:48:31
+ * @author Haliaeetus leucocephalus  
  *
  * 
  */

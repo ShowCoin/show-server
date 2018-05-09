@@ -14,6 +14,12 @@ import one.show.video.thrift.view.LiveView;
 
 public interface VideoService {
 	
+	/**
+	 * 根据id获取直播
+	 * @param liveId
+	 * @return
+	 * @throws ServiceException
+	 */
 	public LiveView getLiveById(Long liveId) throws ServiceException;
 	
 	public LiveView getInLiveByUid(Long uid) throws ServiceException;

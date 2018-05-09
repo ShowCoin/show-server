@@ -29,9 +29,9 @@ import com.google.common.base.Joiner;
 public class WechatPay {
     private static final Logger log = LoggerFactory.getLogger(WechatPay.class);
 
-    private static final String key = "a19657e7a129ec39d570c4863d64316e";
-    private static final String appid = "wx49408dc8d6e448e8";
-    private static final String secret = "4b1b78e41f417b041257adaa2daf6112";
+    private static final String key = "";
+    private static final String appid = "";
+    private static final String secret = "";
 
     public String getToken() throws JSONException {
         String token = null;
