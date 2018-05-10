@@ -19,6 +19,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
+ * TOKEN检验拦截器
  * Created by Haliaeetus leucocephalus on 18-2-22.
  */
 public class UserInterceptor implements HandlerInterceptor {
