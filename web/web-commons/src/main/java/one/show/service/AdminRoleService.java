@@ -19,7 +19,7 @@ import one.show.manage.thrift.view.AdminRoleView;
 public interface AdminRoleService {
 
 	/**
-	 * 根据id获取角色
+	 * 根据角色ID获得角色信息
 	 * @param id
 	 * @return
 	 * @throws ServiceException
@@ -27,28 +27,28 @@ public interface AdminRoleService {
 	public AdminRoleView getRoleById(Integer id) throws ServiceException;
 	
 	/**
-	 * 保存角色
+	 * 保存角色信息
 	 * @param adminRoleView
 	 * @throws ServiceException
 	 */
 	public void save(AdminRoleView adminRoleView) throws ServiceException;
 	
 	/**
-	 * 保存角色
+	 * 更新角色信息
 	 * @param adminRoleView
 	 * @throws ServiceException
 	 */
 	public void update(AdminRoleView adminRoleView) throws ServiceException;
 	
 	/**
-	 * 删除角色
+	 * 删除角色信息
 	 * @param roleId
 	 * @throws ServiceException
 	 */
 	public void delete(Integer roleId) throws ServiceException;
 	
 	/**
-	 * 获取指定角色的功能列表
+	 * 根据角色ID获得角色权限
 	 * @param roleId
 	 * @return
 	 * @throws ServiceException
@@ -56,7 +56,7 @@ public interface AdminRoleService {
 	public List<AdminRoleFuncView> getFuncListByRoleId(Integer roleId) throws ServiceException;
 	
 	/**
-	 * 获取角色列表
+	 * 根据状态获得角色列表信息
 	 * @param status
 	 * @param start
 	 * @param count
