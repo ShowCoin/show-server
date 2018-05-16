@@ -18,20 +18,59 @@ import one.show.manage.thrift.view.AdminUserView;
  */
 public interface AdminUserService {
 
-	
+	/**
+	 * 获取管理员
+	 * @param userName
+	 * @return
+	 * @throws ServiceException
+	 */
 	public AdminUserView getUser(String userName) throws ServiceException;
 	
+	/**
+	 * 更新管理员
+	 * @param au
+	 * @throws ServiceException
+	 */
 	public void updateUser(AdminUserView au) throws ServiceException;
 
+	/**
+	 * 修改管理员密码
+	 * @param userName
+	 * @param password
+	 * @throws ServiceException
+	 */
 	public void updateUserPwd(String userName, String password) throws ServiceException;
 	
+	/**
+	 * 获取用户的角色列表
+	 * @param userName
+	 * @return
+	 * @throws ServiceException
+	 */
 	public List<AdminUserRoleView> getUserRole(String userName) throws ServiceException;
 	
+	/**
+	 * 添加管理员
+	 * @param au
+	 * @throws ServiceException
+	 */
 	public void addUser(AdminUserView au) throws ServiceException;
 	
-	
+	/**
+	 * 获取管理员列表
+	 * @param status
+	 * @param start
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	public AdminUserListView getUserList(ADMIN_STATUS status, int start, int count) throws ServiceException; 
 	
+	/**
+	 * 删除后台用户
+	 * @param userName
+	 * @throws ServiceException
+	 */
 	public void delelteUser(String userName) throws ServiceException;
 }
 
