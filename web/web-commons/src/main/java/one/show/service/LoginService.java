@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Haliaeetus leucocephalus  2016年5月28日 上午12:13:22
+ * @author hank
  *
  * 
  */
@@ -28,7 +28,14 @@ public abstract class LoginService {
 
 	private static final Logger log = LoggerFactory.getLogger(LoginService.class);
 	
-	
+	/**
+	 * 登录
+	 * @param loginParam
+	 * @param userService
+	 * @return
+	 * @throws ReturnException
+	 * @throws ServiceException
+	 */
 	public abstract UserView login(LoginParam loginParam, UserService userService) throws ReturnException, ServiceException;
 	
 

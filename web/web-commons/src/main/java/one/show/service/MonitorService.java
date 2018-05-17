@@ -13,6 +13,16 @@ import one.show.stat.thrift.view.MonitorStatListView;
  */
 public interface MonitorService {
 	
+	/**
+	 * 获取性能日志
+	 * @param beginTime
+	 * @param endTime
+	 * @param type
+	 * @param start
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	public MonitorStatListView findMonitorStatList(int beginTime, int endTime,
 			int type, int start, int count) throws ServiceException;
 
