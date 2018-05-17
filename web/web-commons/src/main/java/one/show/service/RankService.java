@@ -11,9 +11,27 @@ import one.show.stat.thrift.view.RankUserListView;
  * Created by Andy on 18/4/13.
  */
 public interface RankService {
+	/**
+	 * 排行榜
+	 * @param beginTime
+	 * @param endTime
+	 * @param type
+	 * @param start
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	public RankUserListView findUserRankList(int beginTime, int endTime,
 			int type, int start, int count) throws ServiceException;
 	
+	/**
+	 * 激励榜
+	 * @param uid
+	 * @param start
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	public List<Map<String, Object>> findDefenderList(final long uid, final int start, final int count) throws ServiceException;
 
 }
