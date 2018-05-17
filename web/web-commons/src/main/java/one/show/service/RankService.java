@@ -8,11 +8,11 @@ import one.show.common.exception.ServiceException;
 import one.show.stat.thrift.view.RankUserListView;
 
 /**
- * Created by Andy on 18/4/16.
+ * Created by Andy on 18/4/13.
  */
 public interface RankService {
 	/**
-	 * 获取用户排名列表
+	 * 排行榜
 	 * @param beginTime
 	 * @param endTime
 	 * @param type
@@ -25,7 +25,7 @@ public interface RankService {
 			int type, int start, int count) throws ServiceException;
 	
 	/**
-	 * 获取守护者列表
+	 * 激励榜
 	 * @param uid
 	 * @param start
 	 * @param count
