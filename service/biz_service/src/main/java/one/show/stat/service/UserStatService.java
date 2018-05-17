@@ -16,6 +16,11 @@ import one.show.stat.domain.UserStat;
 
 public interface UserStatService {
 
+	/**
+	 * 获取用户的统计数据
+	 * @param uid
+	 * @return
+	 */
 	public UserStat findByUid(Long uid);
 	
 	public void save(UserStat userStat);
