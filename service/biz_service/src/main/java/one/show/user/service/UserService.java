@@ -32,14 +32,30 @@ public interface UserService{
 	
 	public List<User> findAllUsersList(Integer start, Integer count) throws ServiceException;
 
+	/**
+	 * 判断昵称是否可用
+	 * @param nickName
+	 * @return
+	 */
 	public boolean isAllow(String nickName);
 
 	public User findUserByNickName(String nickName);
 
 
+	/**
+	 * 根据靓号获取用户信息
+	 * @param pid
+	 * @return
+	 */
 	public User findUserByPopularNo(long pid);
 
 
+	/**
+	 * 用户注册
+	 * @param user
+	 * @param thirdData
+	 * @throws ServiceException
+	 */
 	public void registerUser(User user, ThirdData thirdData) throws ServiceException;
 	
 }
