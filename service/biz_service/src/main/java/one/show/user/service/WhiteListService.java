@@ -9,6 +9,8 @@ import one.show.user.domain.WhiteList;
  * Created by kevin on 15/8/19.
  */
 public interface WhiteListService {
+	
+	
 	/**
 	 * 保存白名单
 	 * 白名单中的用户直播不需要审核
