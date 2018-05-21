@@ -18,6 +18,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
+ * 日志
  * Created by Haliaeetus leucocephalus on 18/1/23.
  */
 public class LogInterceptor  implements HandlerInterceptor {
