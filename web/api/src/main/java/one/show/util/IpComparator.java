@@ -3,6 +3,11 @@ package one.show.util;
 import java.util.Comparator;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * IP比较器
+ * @author sunke
+ *
+ */
 public class IpComparator implements Comparator<ConcurrentHashMap<String,Object>>{
 
 	@Override
