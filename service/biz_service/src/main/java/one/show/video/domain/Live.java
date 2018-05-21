@@ -23,9 +23,9 @@ public class Live implements Serializable {
 	private long liveId;
 	/** 主播id */
 	private long uid;
-	
+	/** 标题 */
 	private String title;
-	
+	/** 主题 */
 	private String topic;
 	/** 直播开始时间 */
 	private int startTime;

@@ -21,6 +21,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
+ * API监控
  * Created by Haliaeetus leucocephalus on 18-2-22.
  */
 public class ApiMonitorInterceptor implements HandlerInterceptor {
