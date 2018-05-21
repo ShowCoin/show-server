@@ -181,8 +181,21 @@ public interface UserService{
 	 */
 	public List<Integer> getForbiddenActionListByUid(long uid) throws ServiceException;
 
+	/**
+	 * 添加到黑名单
+	 * @param currentUser
+	 * @param target_userid
+	 * @return
+	 * @throws ServiceException
+	 */
 	int add2BlackList(long currentUser, long target_userid) throws ServiceException;
 
+	/**
+	 * 从黑名单移除
+	 * @param currentUser
+	 * @param target_userid
+	 * @throws ServiceException
+	 */
 	void removeFromBlackList(long currentUser, long target_userid) throws ServiceException;
 
 	List<Long> findBlackList(long currentUser, Integer cursor, Integer count) throws ServiceException;
