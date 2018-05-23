@@ -2,6 +2,11 @@ package one.show.view;
 
 import java.io.Serializable;
 
+/**
+ * 返回结果
+ *
+ * @param <T>
+ */
 public class Result<T> implements Serializable{
 	
 	 private String code;

@@ -66,6 +66,10 @@ import com.alibaba.fastjson.support.spring.FastJsonJsonView;
 import com.beust.jcommander.internal.Maps;
 import com.google.common.collect.ImmutableMap;
 
+/**
+ *Api基类 
+ *
+ */
 public class BaseApi implements HandlerExceptionResolver {
 	
     private static final Map<String, String> reasons = ImmutableMap.<String, String>builder()
