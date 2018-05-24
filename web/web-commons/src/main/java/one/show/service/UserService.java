@@ -198,10 +198,34 @@ public interface UserService{
 	 */
 	void removeFromBlackList(long currentUser, long target_userid) throws ServiceException;
 
+	/**
+	 * 获取黑名单
+	 * @param currentUser
+	 * @param cursor
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	List<Long> findBlackList(long currentUser, Integer cursor, Integer count) throws ServiceException;
 	
+	/**
+	 * 根据uid获取黑名单列表
+	 * @param uid
+	 * @param cursor
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	List<BlackListView> findBlackListByUid(long uid, Integer cursor, Integer count) throws ServiceException;
 	
+	/**
+	 * 根据tid获取黑名单列表
+	 * @param tid
+	 * @param cursor
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	List<BlackListView> findBlackListByTid(long tid, Integer cursor, Integer count) throws ServiceException;
 	
 	public void saveForbiddenView(UserForbiddenView forbiddenView) throws ServiceException;
