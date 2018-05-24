@@ -3,6 +3,10 @@ package one.show.id;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+ *ID生成器
+ */
 public class IdWorker {
     
     protected static final Logger LOG = LoggerFactory.getLogger(IdWorker.class);
