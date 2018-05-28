@@ -22,10 +22,32 @@ public interface VideoService {
 	 */
 	public LiveView getLiveById(Long liveId) throws ServiceException;
 	
+	/**
+	 * 根据uid获取当前直播
+	 * @param uid
+	 * @return
+	 * @throws ServiceException
+	 */
 	public LiveView getInLiveByUid(Long uid) throws ServiceException;
 	
+	/**
+	 * 根据id列表获取直播列表
+	 * @param ids
+	 * @return
+	 * @throws ServiceException
+	 */
 	public List<LiveView> getLiveByIds(List<Long> ids)throws ServiceException;
 	
+	/**
+	 * 根据uid获取历史直播列表
+	 * @param uid
+	 * @param sort
+	 * @param condition
+	 * @param start
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	public LiveHistoryViewList getLiveHistoryByUid(Long uid, String sort, Map<String, String> condition, Integer start, Integer count) throws ServiceException;
 	
 	public Integer getLiveHistoryCountByUid(Long uid, Map<String, String> condition) throws ServiceException;
