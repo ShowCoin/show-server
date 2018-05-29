@@ -14,7 +14,10 @@ import org.apache.zookeeper.ZooKeeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * ID 生成器
+ *
+ */
 public class ID extends BaseZookeeper{
 	
 	
