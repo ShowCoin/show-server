@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 能用结果列表 
+ *
+ * @param <V>
+ */
 public class ReturnList<V> implements Serializable {
     /**
 	 * 

@@ -4,8 +4,8 @@
 package one.show.manage.domain;
 
 /**
+ * 操作日志  
  * @author Haliaeetus leucocephalus 
- *  
  */
 public class OperateLog {
 
