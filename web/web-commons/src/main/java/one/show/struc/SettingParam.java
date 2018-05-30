@@ -1,5 +1,9 @@
 package one.show.struc;
 
+/**
+ * 设置参数 
+ *
+ */
 public class SettingParam {
 	//免打扰
 	private int no_disturb;
