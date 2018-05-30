@@ -4,6 +4,7 @@ package one.show.struc;
 import java.io.Serializable;
 
 /**
+ * 登陆参数
  * @author Haliaeetus leucocephalus  2016年5月28日 上午12:15:52
  *
  * 
