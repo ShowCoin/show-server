@@ -50,9 +50,21 @@ public interface VideoService {
 	 */
 	public LiveHistoryViewList getLiveHistoryByUid(Long uid, String sort, Map<String, String> condition, Integer start, Integer count) throws ServiceException;
 	
+	/**
+	 * 根据uid获取历史作品数量
+	 * @param uid
+	 * @param condition
+	 * @return
+	 * @throws ServiceException
+	 */
 	public Integer getLiveHistoryCountByUid(Long uid, Map<String, String> condition) throws ServiceException;
 	
-	
+	/**
+	 * 根据ids获取历史作品列表
+	 * @param ids
+	 * @return
+	 * @throws ServiceException
+	 */
 	public List<LiveHistoryView> getLiveHistoryByIds(List<Long> ids)throws ServiceException;
 	
 	public LiveHistoryView getLiveHistoryById(Long liveId)throws ServiceException;
