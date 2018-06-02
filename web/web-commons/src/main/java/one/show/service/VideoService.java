@@ -67,10 +67,31 @@ public interface VideoService {
 	 */
 	public List<LiveHistoryView> getLiveHistoryByIds(List<Long> ids)throws ServiceException;
 	
+	/**
+	 * 根据id获取历史作品
+	 * @param liveId
+	 * @return
+	 * @throws ServiceException
+	 */
 	public LiveHistoryView getLiveHistoryById(Long liveId)throws ServiceException;
 	
+	/**
+	 * 根据条件获取作品列表
+	 * @param condition
+	 * @return
+	 * @throws ServiceException
+	 */
 	public Integer getLiveListCount(Map<String, String> condition) throws ServiceException;
 	
+	/**
+	 * 根据条件排序获取直播列表
+	 * @param condition
+	 * @param sort
+	 * @param start
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	public List<LiveView> getLiveList(Map<String, String> condition, String sort, Integer start, Integer count) throws ServiceException;
 	
 	public List<LiveView> getLiveList4Square(String sort, Integer start, Integer count) throws ServiceException;
