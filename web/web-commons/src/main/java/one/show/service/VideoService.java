@@ -98,11 +98,26 @@ public interface VideoService {
 	
 	public List<LiveView> getLiveList4HandSort(Integer start, Integer count) throws ServiceException;
 	
-	
+	/**
+	 * 初始化直播间
+	 * @param liveView
+	 * @return
+	 * @throws ServiceException
+	 */
 	public Long initLive(LiveView liveView) throws ServiceException;
 	
+	/**
+	 * 打开视频流
+	 * @param liveView
+	 * @throws ServiceException
+	 */
 	public void openStream(LiveView liveView) throws ServiceException;
 	
+	/**
+	 * 中断视频流
+	 * @param liveView
+	 * @throws ServiceException
+	 */
 	public void breakStream(LiveView liveView) throws ServiceException;
 	
 //	public List<StreamView> getAllStreamList() throws ServiceException;
