@@ -9,6 +9,8 @@ import one.show.manage.domain.Notice;
 import one.show.manage.domain.ReturnList;
 
 /**
+ * 
+ * 通知服务
  * @author Haliaeetus leucocephalus  
  *
  * 
