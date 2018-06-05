@@ -132,7 +132,12 @@ public class WebServer {
 	public void stop() throws Exception{
 		server.stop();
 	}
-	
+
+    /**
+     * main 入口
+     * @param args
+     * @throws Exception
+     */
 	public static void main(String[] args) throws Exception {
 		new WebServer().init();
 	}
