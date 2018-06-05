@@ -133,11 +133,6 @@ public class WebServer {
 		server.stop();
 	}
 
-    /**
-     * main 入口
-     * @param args
-     * @throws Exception
-     */
 	public static void main(String[] args) throws Exception {
 		new WebServer().init();
 	}
