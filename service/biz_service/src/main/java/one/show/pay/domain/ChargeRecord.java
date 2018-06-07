@@ -13,7 +13,7 @@ public class ChargeRecord implements Serializable{
 
 	/**序列化id*/
 	private static final long serialVersionUID = 1L;
-	/***/
+	/**唯一id*/
 	private long id;
 	/**交易号*/
 	private String tradeNo;
