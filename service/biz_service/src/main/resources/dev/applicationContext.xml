@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-
+    <!-- scan package -->
      <context:component-scan base-package="one.show"/>
 
     <context:annotation-config/>
