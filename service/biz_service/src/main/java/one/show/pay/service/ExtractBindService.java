@@ -12,12 +12,11 @@ import one.show.pay.domain.ExtractBind;
  */
 public interface ExtractBindService {
 
-	public void saveExtractBind(ExtractBind extractBind) throws ServiceException;
+	void saveExtractBind(ExtractBind extractBind) throws ServiceException;
 	
-	public ExtractBind getExtractBindByUid(long uid) throws ServiceException;
+	ExtractBind getExtractBindByUid(long uid) throws ServiceException;
 
-
-	public void updateExtractBindByUid(long uid, String alipayAccount, String alipayName) throws ServiceException;
+	void updateExtractBindByUid(long uid, String alipayAccount, String alipayName) throws ServiceException;
 }
 
 
