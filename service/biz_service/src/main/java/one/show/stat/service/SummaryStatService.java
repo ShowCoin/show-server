@@ -16,9 +16,9 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface SummaryStatService {
 
-	public List<SummaryStat> findSummaryList(Integer time) throws ServiceException;
+	List<SummaryStat> findSummaryList(Integer time) throws ServiceException;
 	
-	public SummaryStat findSummary(Integer time) throws ServiceException;
+    SummaryStat findSummary(Integer time) throws ServiceException;
 	
 	void save(SummaryStat summaryStat) throws ServiceException;
 	
