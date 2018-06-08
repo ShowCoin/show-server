@@ -128,7 +128,7 @@ public class WebServer {
         server.start();
         logger.info("SERVER START SUCCESS !!! PORT : "+port+" , "+webAppContext.getContextPath());
 	}
-	//
+	//停止
 	public void stop() throws Exception{
 		server.stop();
 	}
