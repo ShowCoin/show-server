@@ -25,6 +25,14 @@ public class SearchServiceImpl implements SearchService {
 	@Autowired
 	SearchServiceProxy.Iface searchServiceClientProxy;
 
+	/**
+	 * 搜索用户
+	 * @param keyword
+	 * @param cursor
+	 * @param count
+	 * @return
+	 * @throws ServiceException
+	 */
 	@Override
 	public List<Long> searchUser(String keyword, Integer cursor,
 			Integer count) throws ServiceException {
@@ -45,6 +53,11 @@ public class SearchServiceImpl implements SearchService {
 		}
 	}
 
+	/**
+	 * 更新用户
+	 * @param userSearchView
+	 * @throws ServiceException
+	 */
 	@Override
 	public void updateUser(UserSearchView userSearchView) throws ServiceException {
 		try {
