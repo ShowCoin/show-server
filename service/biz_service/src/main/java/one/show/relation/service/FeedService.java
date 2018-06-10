@@ -19,7 +19,7 @@ public interface FeedService {
 	 * 根据uid获取推送列表
 	 * @param uid
 	 * @param condition
-	 * @param start
+	 * @param start 起始位置
 	 * @param count
 	 * @return
 	 * @throws ServiceException
