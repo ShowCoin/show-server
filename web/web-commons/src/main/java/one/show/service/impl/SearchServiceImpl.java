@@ -44,6 +44,11 @@ public class SearchServiceImpl implements SearchService {
 		}
 	}
 
+    /**
+     * 新增用户
+     * @param userSearchView
+     * @throws ServiceException
+     */
 	@Override
 	public void insertUser(UserSearchView userSearchView) throws ServiceException {
 		try {
