@@ -67,6 +67,11 @@ public class SearchServiceImpl implements SearchService {
 		}
 	}
 
+	/**
+	 * 删除用户
+	 * @param uid
+	 * @throws ServiceException
+	 */
 	@Override
 	public void deleteUser(Long uid) throws ServiceException {
 
