@@ -22,6 +22,12 @@ import one.show.user.thrift.view.UserView;
  */
 public class WeixinServiceImpl implements ThirdpartyService {
 
+    /**
+     * 获取用户信息
+     * @param id
+     * @param token
+     * @return
+     */
     @Override
     public UserView getUserInfo(String id,  String token) {
         HttpURLConnection connection = null;

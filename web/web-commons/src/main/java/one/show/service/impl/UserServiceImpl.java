@@ -92,7 +92,13 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private IDServiceProxy.Iface idServiceClientProxy;
-	
+
+	/**
+	 * 查找用户
+	 * @param id
+	 * @return
+	 * @throws ServiceException
+	 */
 	@Override
 	public UserView findUserById(long id) throws ServiceException {
 		UserView user = null;
