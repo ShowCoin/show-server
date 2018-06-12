@@ -288,6 +288,12 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	/**
+	 * 获取用户集合
+	 * @param ids
+	 * @return
+	 * @throws ServiceException
+	 */
 	@Override
 	public List<UserView> findUserListByIds(List<Long> ids)
 			throws ServiceException {
