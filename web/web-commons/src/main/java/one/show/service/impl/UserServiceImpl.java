@@ -194,6 +194,11 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+    /**
+     * 插入用户
+     * @param userview
+     * @throws ServiceException
+     */
 	@Override
 	public void insertUser(UserView userview) throws ServiceException {
 		try {
