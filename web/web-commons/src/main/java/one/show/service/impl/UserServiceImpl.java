@@ -329,6 +329,13 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+    /**
+     * 增加黑名单
+     * @param currentUser
+     * @param target_userid
+     * @return
+     * @throws ServiceException
+     */
 	@Override
 	public int add2BlackList(long currentUser, long target_userid)
 			throws ServiceException {
