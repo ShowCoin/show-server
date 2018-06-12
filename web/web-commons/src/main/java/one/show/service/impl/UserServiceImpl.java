@@ -130,6 +130,12 @@ public class UserServiceImpl implements UserService {
 		return thirdDataView;
 	}
 
+	/**
+	 * 更新用户
+	 * @param uid
+	 * @param updateContent
+	 * @throws ServiceException
+	 */
 	@Override
 	public void updateUserById(long uid, Map<String, String> updateContent)
 			throws ServiceException {
