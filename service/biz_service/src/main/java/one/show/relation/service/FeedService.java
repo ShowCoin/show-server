@@ -1,5 +1,5 @@
 /**
- *  service
+ *  relation service
  */
 package one.show.relation.service;
 
