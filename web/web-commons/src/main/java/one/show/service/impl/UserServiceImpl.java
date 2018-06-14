@@ -347,6 +347,12 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	/**
+	 * 移除黑名单 
+	 * @param currentUser
+	 * @param target_userid
+	 * @throws ServiceException
+	 */
 	@Override
 	public void removeFromBlackList(long currentUser, long target_userid)
 			throws ServiceException {
