@@ -16,6 +16,7 @@ import one.show.common.exception.ServiceException;
 public interface SearchService {
 	
 	/**
+	 *
 	 * 从索引中搜索用户
 	 * @param keyword 可以传昵称、ID
 	 * @param cursor
