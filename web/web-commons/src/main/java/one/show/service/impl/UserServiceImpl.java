@@ -348,7 +348,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	/**
-	 * 移除黑名单 
+	 * 移除黑名单
 	 * @param currentUser
 	 * @param target_userid
 	 * @throws ServiceException
@@ -364,6 +364,14 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+    /**
+     * 查找黑名单
+     * @param currentUser
+     * @param cursor
+     * @param count
+     * @return
+     * @throws ServiceException
+     */
 	@Override
 	public List<Long> findBlackList(long currentUser, Integer cursor,
 			Integer count) throws ServiceException {
