@@ -435,6 +435,14 @@ public class UserServiceImpl implements UserService {
 		return list;
 	}
 
+    /**
+     * 根据tid获取黑名单 
+     * @param uid
+     * @param cursor
+     * @param count
+     * @return
+     * @throws ServiceException
+     */
 	@Override
 	public List<BlackListView> findBlackListByTid(long uid,
 			Integer cursor, Integer count) throws ServiceException {
