@@ -14,7 +14,7 @@ import one.show.relation.domain.Follow;
  */
 public interface FollowService {
 	
-	public List<Follow> findListByUid(Long uid, Integer start, Integer count) throws ServiceException;
+	List<Follow> findListByUid(Long uid, Integer start, Integer count) throws ServiceException;
 	
 	public void save(Follow follow) throws ServiceException;
 	
