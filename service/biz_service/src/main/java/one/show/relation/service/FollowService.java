@@ -1,6 +1,3 @@
-/**
- * 
- */
 package one.show.relation.service;
 
 import java.util.List;
