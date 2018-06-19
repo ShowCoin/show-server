@@ -8,7 +8,6 @@ import one.show.relation.domain.Feed;
 
 /**
  * @author kevin 
- *
  */
 public interface FeedService {
 	
