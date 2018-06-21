@@ -17,7 +17,7 @@ public interface FeedService {
 	 * @param condition
 	 * @param start 起始位置
 	 * @param count
-	 * @return
+	 * @return List
 	 * @throws ServiceException
 	 */
 	public List<Feed> findListByUid(Long uid, Map<String, String> condition, Integer start, Integer count) throws ServiceException;
