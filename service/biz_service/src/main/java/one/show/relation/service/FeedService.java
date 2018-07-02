@@ -2,7 +2,6 @@ package one.show.relation.service;
 
 import java.util.List;
 import java.util.Map;
-
 import one.show.common.exception.ServiceException;
 import one.show.relation.domain.Feed;
 
