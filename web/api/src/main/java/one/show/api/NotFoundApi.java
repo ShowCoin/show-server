@@ -11,10 +11,9 @@ import one.show.view.Result;
 @Controller
 public class NotFoundApi extends BaseApi{
 
-
     /**
      * 404
-     * @return
+     * @return success
      */
     @RequestMapping(value = "/404")
     @ResponseBody
