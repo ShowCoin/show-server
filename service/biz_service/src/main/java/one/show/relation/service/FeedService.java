@@ -7,7 +7,9 @@ import one.show.relation.domain.Feed;
 
 /**
  * @author kevin 
- 
+ * relation
+ * servcie
+ * for proxy
  */
 public interface FeedService {
 	
