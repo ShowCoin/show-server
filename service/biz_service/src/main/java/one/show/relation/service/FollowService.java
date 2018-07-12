@@ -7,21 +7,21 @@ import one.show.relation.domain.Follow;
 
 /**
  * @author kevin 
- *
+ * send git
  */
 public interface FollowService {
 	
 	List<Follow> findListByUid(Long uid, Integer start, Integer count) throws ServiceException;
 	
-	public void save(Follow follow) throws ServiceException;
+	void save(Follow follow) throws ServiceException;
 	
-	public void delete(Long uid, Long fid) throws ServiceException;
+	void delete(Long uid, Long fid) throws ServiceException;
 
 	List<Boolean> isFollowed(Long currentUser, List<Long> uids);
 	
 	List<Boolean> isFans(Long currentUser, List<Long> uids);
 	
-	public Integer findFollowCountByUid(Long uid) throws ServiceException;
+	Integer findFollowCountByUid(Long uid) throws ServiceException;
 }
 
 
