@@ -13,7 +13,7 @@ public class NotFoundApi extends BaseApi{
 
     /**
      * 404
-     * @return default success
+     * @return default successful
      *
      */
     @RequestMapping(value = "/404")
