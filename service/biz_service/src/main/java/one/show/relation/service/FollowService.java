@@ -7,7 +7,7 @@ import one.show.relation.domain.Follow;
 
 /**
  * @author kevin 
- * send git
+ * send github
  */
 public interface FollowService {
 	

@@ -21,6 +21,7 @@ public interface FeedService {
 	 * @param count
 	 * @return List
 	 * @throws ServiceException
+	 *
 	 */
 	public List<Feed> findListByUid(Long uid, Map<String, String> condition, Integer start, Integer count) throws ServiceException;
 	
@@ -29,6 +30,7 @@ public interface FeedService {
 	 * 保存推送数据
 	 * @param feed
 	 * @throws ServiceException
+	 *
 	 */
 	public void save(Feed feed) throws ServiceException;
 	
@@ -38,6 +40,7 @@ public interface FeedService {
 	 * @param fid  关注人ID
 	 * @param point 推送类型
 	 * @throws ServiceException
+	 *
 	 */
 	public void delete(Long uid, Long fid, String point) throws ServiceException;
 	
@@ -48,8 +51,14 @@ public interface FeedService {
 	 * @param point
 	 * @param updateContent
 	 * @throws ServiceException
+	 *
 	 */
 	public void update(Long uid, Long fid, String point, Map<String, String> updateContent) throws ServiceException;
+
+	/**
+	 * 删除
+	 */
+	public void delete(Long uid, Long fid) throws ServiceException;
 
 }
 
