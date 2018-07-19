@@ -7,7 +7,7 @@ import one.show.relation.domain.Follow;
 
 /**
  * @author kevin 
- * send github
+ * 
  */
 public interface FollowService {
 	
@@ -21,7 +21,7 @@ public interface FollowService {
 	
 	List<Boolean> isFans(Long currentUser, List<Long> uids);
 	
-	Integer findFollowCountByUid(Long uid) throws ServiceException;
+	public Integer findFollowCountByUid(Long uid) throws ServiceException;
 }
 
 
