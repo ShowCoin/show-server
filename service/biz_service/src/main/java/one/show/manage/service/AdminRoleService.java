@@ -24,8 +24,9 @@ public interface AdminRoleService {
      * @param roleId
      * @return
      * @throws ServiceException
+     *
      */
-    public AdminRole getRole(Integer roleId) throws ServiceException;
+     AdminRole getRole(Integer roleId) throws ServiceException;
     
     
     /**
@@ -33,8 +34,9 @@ public interface AdminRoleService {
      * @param status 状态
      * @return
      * @throws ServiceException
+     *
      */
-    public ReturnList<AdminRole> getRoleList(ADMIN_STATUS status, Integer start, Integer count) throws ServiceException;
+     ReturnList<AdminRole> getRoleList(ADMIN_STATUS status, Integer start, Integer count) throws ServiceException;
     
     
     /**
@@ -42,8 +44,9 @@ public interface AdminRoleService {
      * @param ar
      * @param funcIds  角色对应的功能
      * @throws ServerException
+     *
      */
-    public void addRole(AdminRole ar, List<String> funcIds) throws ServiceException;
+     void addRole(AdminRole ar, List<String> funcIds) throws ServiceException;
     
     
     /**
@@ -51,8 +54,9 @@ public interface AdminRoleService {
      * @param roleId
      * @return
      * @throws ServerException
+     *
      */
-    public List<AdminRoleFunc> getRoleFunc(Integer roleId)  throws ServiceException;
+     List<AdminRoleFunc> getRoleFunc(Integer roleId)  throws ServiceException;
     
     
     
@@ -62,7 +66,7 @@ public interface AdminRoleService {
      * @param funcIds  角色对应的功能
      * @throws ServiceException
      */
-    public void updateRole(AdminRole ar, List<String> funcIds) throws ServiceException;
+     void updateRole(AdminRole ar, List<String> funcIds) throws ServiceException;
     
     
     /**
@@ -70,7 +74,7 @@ public interface AdminRoleService {
      * @param roleId
      * @throws ServiceException
      */
-    public void deleteRole(Integer roleId) throws ServiceException;
+     void deleteRole(Integer roleId) throws ServiceException;
     
 
 }
