@@ -20,6 +20,9 @@ public interface StockLogService {
 	public Double getStockLogItemTotalByUid(long uid, Map<String, String> paramMap) throws ServiceException;
 
 	public void saveStockLog(StockLog stockLog) throws ServiceException;
+
+	public BigDecimal getPendingStockLog(long userId) throws ServiceException;
+	
 }
 
 

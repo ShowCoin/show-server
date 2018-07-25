@@ -18,23 +18,25 @@ import one.show.pay.thrift.view.ExtractRmbView;
  */
 public interface ExtractRmbService {
 	
-	public Long getMaxBatchNo();
+	 Long getMaxBatchNo();
 
-	public void saveExtractRmb(ExtractRmb extractRmb) throws ServiceException;
+	 void saveExtractRmb(ExtractRmb extractRmb) throws ServiceException;
 	
-	public ReturnList<ExtractRmb> getExtractRmbListByUid(Map<String,String> paramMap, Integer start, Integer count) throws ServiceException;
+	 ReturnList<ExtractRmb> getExtractRmbListByUid(Map<String,String> paramMap, Integer start, Integer count) throws ServiceException;
 
-	public Double getExtractRmbTotalByUid(long uid,String key, Map<String, String> paramMap) throws ServiceException;
+	 Double getExtractRmbTotalByUid(long uid,String key, Map<String, String> paramMap) throws ServiceException;
 
-	public void updateExtractRmbById(long id, Map<String, String> paramMap) throws ServiceException;
+	 void updateExtractRmbById(long id, Map<String, String> paramMap) throws ServiceException;
 	
-	public List<ExtractRmb> getExtractRmbListByBatchNo(long batchNo) throws ServiceException;
+	 List<ExtractRmb> getExtractRmbListByBatchNo(long batchNo) throws ServiceException;
 	
-	public List<ExtractRmb> getExtractRmbListByStatus(int status,Integer count);
+	 List<ExtractRmb> getExtractRmbListByStatus(int status,Integer count);
 
-	public ExtractRmbView getExtractRmbViewById(long id);
+	 ExtractRmbView getExtractRmbViewById(long id);
 
-	public Double getExtractRmbTotalCount();
+	 Double getExtractRmbTotalCount();
+
+	 BigDecimal getLastestRate(int symble);
 }
 
 
