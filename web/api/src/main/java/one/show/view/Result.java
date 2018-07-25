@@ -8,6 +8,8 @@ import java.io.Serializable;
  * @param <T>
  */
 public class Result<T> implements Serializable{
+
+	long Serializable = 1L;
 	
 	 private String code;
 
