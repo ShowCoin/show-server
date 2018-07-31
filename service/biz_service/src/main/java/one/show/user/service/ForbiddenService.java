@@ -43,4 +43,6 @@ public interface ForbiddenService {
 	public boolean findForbiddenByActionAndUid(long uid,int action) throws ServiceException;
 	
 	public List<Boolean> findForbiddenListByUidsAndAction(List<Long> uids,int action) throws ServiceException;
+	
+	public String getVIP(Long userId) throws ServiceException;
 }
