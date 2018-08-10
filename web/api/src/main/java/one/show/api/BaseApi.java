@@ -344,6 +344,18 @@ public class BaseApi implements HandlerExceptionResolver {
 
         
     }
+
+
+    /*hb*/
+    public static Result<Map<String,Object>> error(Long userId, String action,Map<String, Object> data) {
+        Result<Map<String,Object>> result=new Result.Builder<Map<String,Object>>()
+                .setData(data)
+                .msg(userId)
+                .state(action)
+                .build();    
+        return result;
+    }
+
    
     
    
