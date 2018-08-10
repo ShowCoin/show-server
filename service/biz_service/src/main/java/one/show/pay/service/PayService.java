@@ -74,17 +74,19 @@ public interface PayService {
 
 	public OrdersView findOrderViewByReceipt(String md5_receipt) throws ServiceException;
 	
-	 public Long findTransactionMoneyByParams(Map<String, String> paramMap) throws ServiceException ;
+	public Long findTransactionMoneyByParams(Map<String, String> paramMap) throws ServiceException ;
 
-	 public void chargeRecord(ChargeRecord chargeRecord) throws ServiceException;
+	public void chargeRecord(ChargeRecord chargeRecord) throws ServiceException;
 	 
-	 public void addWithdrawAddress(WithdrawAddress withdrawAddress) throws ServiceException;
+	public void addWithdrawAddress(WithdrawAddress withdrawAddress) throws ServiceException;
 	 
-	 public void updateWithdrawAddress(int id,Map<String, String> updateContent) throws ServiceException;
+	public void updateWithdrawAddress(int id,Map<String, String> updateContent) throws ServiceException;
 	 
-	 public void deleteWithdrawAddress(int id) throws ServiceException;
+    public void sendHB(Long userId,BigDecimal amount,Integer count) throws ServiceException;
+
+	public void spendHB(Long userId,BigDecimal amount) throws ServiceException;
 	 
-	 public List<WithdrawAddress> findWithdrawAddressList(long uid) throws ServiceException;
+	public List<WithdrawAddress> findWithdrawAddressList(long uid) throws ServiceException;
 
 	public long applyWithdraw(WithdrawRecord withdrawRecord) throws ServiceException, StockNotEnoughException;
 
