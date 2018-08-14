@@ -8,7 +8,7 @@ import one.show.manage.domain.OperateLog;
 
 /**
  * @author Haliaeetus leucocephalus 
- *
+ * @desc operation log
  */
 public interface OperateLogService {
 
