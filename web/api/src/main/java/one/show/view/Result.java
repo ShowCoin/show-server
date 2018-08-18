@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 public class Result<T> implements Serializable{
 
-	long Serializable = 1L;
+	 long Serializable = 1L;
 	
 	 private String code;
 

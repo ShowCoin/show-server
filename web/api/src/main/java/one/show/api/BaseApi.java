@@ -142,6 +142,7 @@ public class BaseApi implements HandlerExceptionResolver {
                     //私信相关
             .put("6001", "你打招呼太频繁了，休息一下再发吧")
             .put("6002", "你们已经是好友了，去对话页面聊天吧")
+            .put("6003", "抱歉，好友已下线")
 
                     //视频相关
             .put("7001", "该直播不存在")

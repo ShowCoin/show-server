@@ -29,4 +29,8 @@ public interface  ActivityService {
 
 	void updateActivityConfig(int id, Map<String, String> updateContent);
 
+	boolean invote(int id, int iid);
+
+	List<ActivityShare> invoteList(int id);
+
 }
