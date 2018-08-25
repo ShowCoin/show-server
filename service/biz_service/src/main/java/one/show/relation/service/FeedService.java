@@ -59,6 +59,8 @@ public interface FeedService {
 	 * 删除
 	 */
 	public void delete(Long uid, Long fid) throws ServiceException;
+	
+	public boolean pub(Long uid, Long fid) throws ServiceException;
 
 }
 
