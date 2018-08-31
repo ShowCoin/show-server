@@ -29,6 +29,8 @@ public interface FamilyClearingService {
 	public FamilyClearing getFamilyClearingById(long id);
 
 	public void updateFamilyClearing(long id, Map<String, String> updateContent);
+	
+	public void updateLevelFamilys (long id);
 }
 
 
