@@ -25,4 +25,8 @@ public interface BlackListService {
 
     public boolean isBlack(long uid, long tid) throws ServiceException;
 
+    public boolean moveBlack(long uid, long tid) throws ServiceException;
+
+    public Integer blackLevel(long uid, long tid) throws ServiceException;
+
 }

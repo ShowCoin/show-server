@@ -60,4 +60,8 @@ public interface StockService {
 	public List<Stock> findAllStock0(Integer tbid) throws ServiceException;
 	
 	public List<Stock> findAllStock1(Integer tbid) throws ServiceException;
+
+	public boolean frozen(BigDecimal number,Integer tbid,long uid) throws ServiceException;
+
+	public boolean unfrozen(BigDecimal number,Integer tbid,long uid) throws ServiceException;
 }
