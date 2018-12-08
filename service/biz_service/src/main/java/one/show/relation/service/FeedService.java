@@ -62,6 +62,8 @@ public interface FeedService {
 	
 	public boolean pub(Long uid, Long fid) throws ServiceException;
 
+	public boolean sub(Long uid, Long fid) throws ServiceException;
+
 }
 
 
