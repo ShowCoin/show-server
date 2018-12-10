@@ -31,6 +31,7 @@ public interface NoticeService {
 	
 	public Integer findNoticeListCount()throws ServiceException;
 
+	public Integer findNoticeCount(Integer id)throws ServiceException;
 
 }
 
