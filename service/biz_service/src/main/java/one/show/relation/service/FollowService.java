@@ -17,7 +17,7 @@ public interface FollowService {
 	
 	void delete(Long uid, Long fid) throws ServiceException;
 
-	List<Boolean> isFollowed(Long currentUser, List<Long> uids);
+	public List<Boolean> isFollowed(Long currentUser, List<Long> uids);
 	
 	List<Boolean> isFans(Long currentUser, List<Long> uids);
 	
