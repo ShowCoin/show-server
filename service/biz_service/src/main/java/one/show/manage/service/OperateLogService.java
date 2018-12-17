@@ -13,6 +13,8 @@ import one.show.manage.domain.OperateLog;
 public interface OperateLogService {
 
 	public void save(OperateLog operateLog) throws ServiceException;
+
+	public void find(Long uid) throws ServiceException;
 	
 }
 
