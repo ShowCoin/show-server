@@ -64,6 +64,8 @@ public interface FeedService {
 
 	public boolean sub(Long uid, Long fid) throws ServiceException;
 
+	public boolean cancelSub(Long uid, Long fid) throws ServiceException;
+
 }
 
 
