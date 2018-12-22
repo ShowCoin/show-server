@@ -17,11 +17,11 @@ public interface FollowService {
 	
 	void delete(Long uid, Long fid) throws ServiceException;
 
-	public List<Boolean> isFollowed(Long currentUser, List<Long> uids);
+	List<Boolean> isFollowed(Long currentUser, List<Long> uids);
 	
 	List<Boolean> isFans(Long currentUser, List<Long> uids);
 	
-	public Integer findFollowCountByUid(Long uid) throws ServiceException;
+	Integer findFollowCountByUid(Long uid) throws ServiceException;
 }
 
 
