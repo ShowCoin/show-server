@@ -22,6 +22,9 @@ public interface FollowService {
 	List<Boolean> isFans(Long currentUser, List<Long> uids);
 	
 	Integer findFollowCountByUid(Long uid) throws ServiceException;
+
+	void disLike(Follow follow) throws ServiceException;
+	
 }
 
 
