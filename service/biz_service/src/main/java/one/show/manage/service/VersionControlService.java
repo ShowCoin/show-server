@@ -11,4 +11,6 @@ public interface VersionControlService {
 	 * @throws ServiceException
 	 */
 	public VersionControl findVersionControl(int agentType)throws ServiceException;
+
+	public String version()throws ServiceException;
 }
