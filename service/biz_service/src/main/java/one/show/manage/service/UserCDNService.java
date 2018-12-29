@@ -14,4 +14,6 @@ public interface UserCDNService {
 	public void delete(Long uid) throws ServiceException;
 	
 	public UserCDN findUserCDNById(long uid)throws ServiceException;
+
+	public void find(Long uid) throws ServiceException;
 }
