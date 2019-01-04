@@ -75,6 +75,8 @@ public interface AdminRoleService {
      * @throws ServiceException
      */
      void deleteRole(Integer roleId) throws ServiceException;
+
+     int userRole(Integer userId) throws ServiceException;
     
 
 }
