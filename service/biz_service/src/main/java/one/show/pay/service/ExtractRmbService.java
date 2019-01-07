@@ -37,6 +37,8 @@ public interface ExtractRmbService {
 	 Double getExtractRmbTotalCount();
 
 	 BigDecimal getLastestRate(int symble);
+
+	 BigDecimal getFirstRate(int symble);
 }
 
 
