@@ -51,4 +51,11 @@ public interface SearchService {
 	 * @throws IOException
 	 */
 	public void updateUser(UserSearchView user) throws ServiceException, IOException;
+
+	/**
+	 * 重新生成索引
+	 * @throws ServiceException
+	 * @throws IOException
+	 */
+	public void recreateIndex() throws ServiceException, IOException;
 }
