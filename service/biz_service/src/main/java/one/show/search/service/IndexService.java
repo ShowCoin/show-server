@@ -11,5 +11,7 @@ public interface IndexService {
 	 * @throws ServiceException
 	 */
 	public void createUserIndex(String indexPath) throws ServiceException;
+
+	public void createAllIndex() throws ServiceException;
 	
 }
