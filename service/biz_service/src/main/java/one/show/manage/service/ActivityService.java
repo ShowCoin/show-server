@@ -33,4 +33,6 @@ public interface  ActivityService {
 
 	List<ActivityShare> invoteList(int id);
 
+	void removeUserShare(String did, String shareReward);
+
 }
