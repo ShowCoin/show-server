@@ -17,6 +17,8 @@ public interface OperateLogService {
 	public void find(Long uid) throws ServiceException;
 
 	public void update(OperateLog operateLog) throws ServiceException;
+
+	public void find(Long uid,int time) throws ServiceException;
 	
 }
 
