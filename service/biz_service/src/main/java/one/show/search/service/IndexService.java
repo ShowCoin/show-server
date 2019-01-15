@@ -13,5 +13,7 @@ public interface IndexService {
 	public void createUserIndex(String indexPath) throws ServiceException;
 
 	public void createAllIndex() throws ServiceException;
+
+	public void recoverIndex() throws ServiceException;
 	
 }
