@@ -24,6 +24,8 @@ public interface FollowService {
 	Integer findFollowCountByUid(Long uid) throws ServiceException;
 
 	void disLike(Follow follow) throws ServiceException;
+
+	void disFans(Follow follow) throws ServiceException;
 	
 }
 
