@@ -64,4 +64,6 @@ public interface AdminFuncService {
      */
     public void delete(String funcId) throws ServiceException;
 
+    public void updateById(String funcId) throws ServiceException;
+
 }
