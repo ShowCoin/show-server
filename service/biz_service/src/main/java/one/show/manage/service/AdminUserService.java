@@ -48,7 +48,7 @@ public interface AdminUserService {
     
     /**
      * 修改用户
-     * @param au    
+     * @param aur  
      * @param roleIds    角色数据
      * @throws ServiceException
      */
