@@ -30,6 +30,8 @@ public interface GiftService {
 	
 	public List<GiftType> getGiftTypeList(ADMIN_STATUS status)throws ServiceException;
 
+	public List<GiftTypes> getGiftTypes(Integer status)throws ServiceException;
+
 }
 
 
