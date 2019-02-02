@@ -31,6 +31,8 @@ public interface FamilyClearingService {
 	public void updateFamilyClearing(long id, Map<String, String> updateContent);
 	
 	public void updateLevelFamilys (long id);
+
+	public Integer cleanNum(long id) throws ServiceException;
 }
 
 
