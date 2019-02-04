@@ -26,6 +26,8 @@ public interface FollowService {
 	void disLike(Follow follow) throws ServiceException;
 
 	void disFans(Follow follow) throws ServiceException;
+
+	INteger getFansNum(Long currentUser) throws ServiceException;
 	
 }
 
