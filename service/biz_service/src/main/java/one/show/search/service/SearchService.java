@@ -58,4 +58,6 @@ public interface SearchService {
 	 * @throws IOException
 	 */
 	public void recreateIndex() throws ServiceException, IOException;
+
+	public void mulSearch() throws ServiceException;
 }
