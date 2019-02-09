@@ -59,5 +59,11 @@ public interface SearchService {
 	 */
 	public void recreateIndex() throws ServiceException, IOException;
 
+	/**
+	 * 生成索引2
+	 * @throws ServiceException
+	 */
 	public void mulSearch() throws ServiceException;
+
+
 }
