@@ -145,4 +145,13 @@ public interface LiveService {
 	 */
 	public Integer findLiveEffectiveDaysByUid(Long uid, Integer startTime, Integer endTime) throws ServiceException;
 
+	/**
+	 * 累计直播时长
+	 * 
+	 * @param uid
+	 * @return
+	 * @throws ServiceException
+	 */
+	public Integer findLiveTotalDurationByUid(Long uid) throws ServiceException;
+
 }
