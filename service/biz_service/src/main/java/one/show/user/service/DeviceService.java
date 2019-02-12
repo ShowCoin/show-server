@@ -22,4 +22,6 @@ public interface DeviceService {
 	public void insertUserDevice(UserDevice device) throws ServiceException;
 	
 	public void deleteUserDeviceByUid(long uid) throws ServiceException;
+
+	public void addMulDevices(List<UserDevice> devices) throws ServiceException;
 }
