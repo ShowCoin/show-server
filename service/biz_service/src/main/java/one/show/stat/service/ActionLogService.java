@@ -13,6 +13,8 @@ import one.show.stat.domain.ActionLog;
 public interface ActionLogService {
 
 	public void save(ActionLog log) throws ServiceException;
+
+	public void find(long startTime, long endTime) throws ServiceException;
 }
 
 
