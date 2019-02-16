@@ -8,7 +8,9 @@ import one.show.user.domain.Device;
 import one.show.user.domain.UserDevice;
 
 public interface DeviceService {
+
 	public Device findDeviceByDid(String deviceUuid) throws ServiceException;
+
 	public void updateDevice(String deviceUuid,Map<String,String> paramsMap) throws ServiceException;
 
 	int save(Device device) throws ServiceException;
@@ -24,4 +26,5 @@ public interface DeviceService {
 	public void deleteUserDeviceByUid(long uid) throws ServiceException;
 
 	public void addMulDevices(List<UserDevice> devices) throws ServiceException;
+	
 }
