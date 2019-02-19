@@ -73,4 +73,6 @@ public interface LiveRecordService {
 	 */
 	void deleteLiveRecord(long id);
 
+	public List<LiveRecord> findByTime(long curtime);
+
 }
