@@ -21,6 +21,8 @@ public interface RoomAdminService {
     public Integer findCountByUid(long uid) throws ServiceException;
     
     public boolean isRoomAdmin(long uid, long tid) throws ServiceException;
+
+    public List<Integer> roomAdminRoles(long tid) throws ServiceException;
     
 
 }
