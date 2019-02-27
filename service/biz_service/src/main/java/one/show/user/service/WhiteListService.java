@@ -43,7 +43,9 @@ public interface WhiteListService {
      * @throws ServiceException
      */
     WhiteList findWhiteListByUid(long uid) throws ServiceException;
-    
+
+
+    List<WhiteList> findWhiteList(List<String> params) throws ServiceException;
    
 
 }
