@@ -81,6 +81,14 @@ public interface AdminUserService {
      */
     public List<AdminUserRole> getUserRole(String userName) throws ServiceException;
 
+    /**
+     * 验证一个用户的角色
+     * @param roleId
+     * @return
+     * @throws ServerException
+     */
+    public boolean getUserRole(int roleId) throws ServiceException;
+
 }
 
 
