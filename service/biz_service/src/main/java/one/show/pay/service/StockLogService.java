@@ -22,6 +22,8 @@ public interface StockLogService {
 	public void saveStockLog(StockLog stockLog) throws ServiceException;
 
 	public BigDecimal getPendingStockLog(long userId) throws ServiceException;
+
+	public BigDecimal getUserStockLog(long userId) throws ServiceException;
 	
 }
 
