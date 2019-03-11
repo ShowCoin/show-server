@@ -92,6 +92,6 @@ public interface PayService {
 
 	public void updateWithdrawRecord(long id, Map<String, String> updateContent) throws ServiceException;
 
-	public void getWithdrawRecord(long id, Map<String, String> updateContent) throws ServiceException;
+	public List<WithdrawRecord> getWithdrawRecord(long id, Map<String, String> updateContent) throws ServiceException;
 
 }
