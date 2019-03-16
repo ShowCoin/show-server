@@ -66,5 +66,7 @@ public interface StockService {
 	public boolean unfrozen(BigDecimal number,Integer tbid,long uid) throws ServiceException;
 	
 	public boolean spend(BigDecimal number,Integer tbid,long uid) throws ServiceException;
+
+	public boolean unspend(BigDecimal number,Integer tbid,long uid) throws ServiceException;
 	
 }
