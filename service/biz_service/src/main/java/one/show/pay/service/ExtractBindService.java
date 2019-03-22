@@ -17,6 +17,8 @@ public interface ExtractBindService {
 	ExtractBind getExtractBindByUid(long uid) throws ServiceException;
 
 	void updateExtractBindByUid(long uid, String alipayAccount, String alipayName) throws ServiceException;
+
+	public long updateExtractBind(ExtractBind extractBind) throws ServiceException;
 }
 
 
