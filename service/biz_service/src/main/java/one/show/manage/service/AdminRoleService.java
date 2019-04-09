@@ -76,6 +76,11 @@ public interface AdminRoleService {
      */
      void deleteRole(Integer roleId) throws ServiceException;
 
+     /**
+     * 获取角色信息
+     * @param roleId
+     * @throws ServiceException
+     */
      int userRole(Integer userId) throws ServiceException;
     
 
