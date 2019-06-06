@@ -30,6 +30,8 @@ public interface StockLogService {
 	public List<StockLog> getUserLastestStockLog(long userId,int count) throws ServiceException;
 
 	public List<StockLog> getStockLogThanTime(long userId,long time) throws ServiceException;
+
+	public StockLog getUserStockLog(long userId,Map params) throws ServiceException;
 	
 }
 
